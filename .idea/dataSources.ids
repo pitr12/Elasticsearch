@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails Treti_tyzden_pokus3: development" uuid="dfb5adc7-f41f-4da9-8458-b0cf697810b7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Treti_tyzden_pokus3: test" uuid="4ed69622-cf89-422a-a5a3-e6c6063ca812">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Treti_tyzden_pokus3: production" uuid="af1db7b4-d476-4856-9d23-2cf543c58c3b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
