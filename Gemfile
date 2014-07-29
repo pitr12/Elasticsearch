@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'nokogiri'
+gem 'faraday'
+gem 'bootstrap-sass', '2.3.2.0'
