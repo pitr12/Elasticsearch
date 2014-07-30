@@ -1,0 +1,90 @@
+<h1>Results (<%= @results['hits']['total'] %>)</h1>
+
+<h2>Customers facet</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Term</th>
+    <th>Count</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @results['facets']['Customers']['terms'].each do |result| %>
+      <tr>
+        <td><%= result["term"] %></td>
+        <td><%= result["count"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>By day facet</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Term</th>
+    <th>Count</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @results['facets']['by_day']['entries'].each do |result| %>
+      <tr>
+        <td><%= time_tag(Time.at(result["time"] / 1000).to_date) %></td>
+        <td><%= result["count"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>By price facet</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Term</th>
+    <th>Count</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @results['facets']['by_price']['ranges'].each do |result| %>
+      <tr>
+        <td><%= result["from"].to_i %> - <%= result["to"].to_i %></td>
+        <td><%= result["total_count"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<h2>Contents</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Supplier</th>
+            <th>Content</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+  <tbody>
+  <% @results['hits']['hits'].each do |result| %>
+      <tr>
+        <td><%= result["_id"] %></p></td>
+        <td><%= result["_source"]["customer"] %></td>
+        <td><%= result["_source"]["supplier"] %></td>
+        <td><%= result["_source"]["content"] %></td>
+        <td><%= result["_source"]["price"] %></td>
+        <td><%= result["_source"]["date"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
